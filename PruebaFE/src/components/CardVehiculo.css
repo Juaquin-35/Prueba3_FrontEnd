@@ -1,0 +1,101 @@
+.card-vehiculo {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 1rem;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+@media (min-width: 640px) {
+  .card-vehiculo {
+    width: calc(50% - 0.5rem); /* 2 columnas en pantallas medianas */
+  }
+}
+
+.card-vehiculo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* CLASES DINÁMICAS (Fase 5) */
+.card-vehiculo.status-permanente {
+  border-left: 6px solid var(--success-color);
+  background-color: #f7fafc;
+}
+
+.card-vehiculo.status-transitorio {
+  border-left: 6px solid var(--warning-color);
+  background-color: #fffaf0;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.badge-patente {
+  background-color: var(--gray-dark);
+  color: white;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.badge-tipo {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.status-permanente .badge-tipo {
+  background-color: #daf3e0;
+  color: var(--primary-color);
+}
+
+.status-transitorio .badge-tipo {
+  background-color: #feebc8;
+  color: var(--warning-color);
+}
+
+.card-body {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.card-body p {
+  margin-bottom: 0.25rem;
+}
+
+.card-footer-btn {
+  margin-top: auto;
+}
+
+.btn-liberar {
+  width: 100%;
+  background-color: white;
+  color: var(--danger-color);
+  border: 1px solid var(--danger-color);
+  padding: 0.4rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-liberar:hover {
+  background-color: var(--danger-color);
+  color: white;
+}
